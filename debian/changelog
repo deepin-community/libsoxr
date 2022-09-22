@@ -1,0 +1,114 @@
+libsoxr (0.1.3-4) unstable; urgency=medium
+
+  * Team upload.
+  * Update the patch fixing the pkg-config content, so the Version field is
+    correct also when built without nocheck.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Wed, 06 May 2020 16:13:53 +0200
+
+libsoxr (0.1.3-3) unstable; urgency=medium
+
+  * Team upload
+
+  [ Mattia Rizzolo ]
+  * Add patch to fix the content of the pkg-config file when built with nocheck.
+    (Closes: #942795)
+
+  [ Sebastian Ramacher ]
+  * debian/patches: Revert "Add patch to fix FTBFS in sparc64." (Closes:
+    #944017)
+  * debian/control: Bump Standards-Version
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 03 May 2020 22:47:06 +0200
+
+libsoxr (0.1.3-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Mattia Rizzolo ]
+  * Add patch to fix FTBFS in sparc64.  Closes: #942746
+  * Set Rules-Requires-Root:no.
+  * Add Build-Depends-Package to the .symbols files.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Mon, 21 Oct 2019 14:54:34 +0200
+
+libsoxr (0.1.3-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Felipe Sateler ]
+  * Change maintainer address to debian-multimedia@lists.debian.org
+
+  [ Ondřej Nový ]
+  * d/watch: Use https protocol
+  * Use debhelper-compat instead of debian/compat
+
+  [ Sebastian Ramacher ]
+  * New upstream release. (Closes: #934612)
+  * debian/control:
+    - Bump Standards-Version.
+    - Bump debhelper compat to 12.
+    - Remove obsolete Pre-Depends.
+  * debian/rules: Remove obsolete configure flag
+  * debian/patches: Remove since applied upstream.
+  * debian/copyright: Remove unused paragraph.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 09 Sep 2019 20:28:47 +0200
+
+libsoxr (0.1.2-3) unstable; urgency=medium
+
+  * Team upload.
+  * Fix FTCBFS:  Closes: #853194
+    + Feed endianness from DEB_HOST_ARCH_ENDIAN.
+    + Honour DEB_BUILD_OPTIONS=nocheck.
+    Thanks to Helmut Grohne <helmut@subdivi.de> for the patch.
+  * Bump debhelper compat level to 10.
+    + Drop --parallel, now default.
+  * Bump Standards-Version to 4.1.1, no changes needed.
+  * Drop explicit Testsuite field, not needed anymore.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sat, 04 Nov 2017 21:58:23 +0100
+
+libsoxr (0.1.2-2) unstable; urgency=medium
+
+  * Define NDEBUG to disable debug output (Closes: #822727, LP: #1649224)
+  * Update Vcs links to point to https URLs
+  * Bump Standards-Version to 3.9.8 (no changes needed)
+  * Use https for copyright format specification URL
+  * Enable all hardening flags
+
+ -- Benjamin Drung <bdrung@debian.org>  Sun, 25 Dec 2016 18:41:58 +0100
+
+libsoxr (0.1.2-1) unstable; urgency=medium
+
+  [ Benjamin Drung ]
+  * New upstream release.
+  * Drop example_linking.patch (applied upstream)
+  * Bump Standards-Version to 3.9.6 (no changes needed)
+  * Drop XS- prefix for Testsuite field
+  * Correct short license of src/pffft.* to Spherepack
+  * Fix dep5-copyright-license-name-not-unique
+
+  [ Alessio Treglia ]
+  * Add myself as Uploader.
+
+ -- Benjamin Drung <bdrung@debian.org>  Thu, 24 Sep 2015 20:44:17 +0200
+
+libsoxr (0.1.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Link examples with -lm. Thanks to Martin Pitt for the patch.
+
+ -- Benjamin Drung <bdrung@debian.org>  Fri, 05 Apr 2013 13:06:38 +0200
+
+libsoxr (0.1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #697614).
+
+ -- Benjamin Drung <bdrung@debian.org>  Sat, 19 Jan 2013 13:59:15 +0100

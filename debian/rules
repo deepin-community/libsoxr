@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+include /usr/share/dpkg/architecture.mk
+
+CONFIGURE_FLAGS = -DLIB_INSTALL_DIR=/usr/lib/$(DEB_HOST_MULTIARCH) \
+		  -DDOC_INSTALL_DIR=/usr/share/doc/libsoxr-dev
+
+ifneq ($(filter nocheck,$(DEB_BUILD_OPTIONS)),)
+CONFIGURE_FLAGS += -DBUILD_TESTS=0 -DBUILD_EXAMPLES=1
+endif
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(CONFIGURE_FLAGS)
+
+override_dh_compress:
+	dh_compress -X.c -X.C
